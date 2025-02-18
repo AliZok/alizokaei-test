@@ -1,6 +1,6 @@
 <template>
-    <div class="Collaps rounded-xl text-gray-700" :class="{ 'my-shadow': isOpen }">
-        <button @click="toggleAnswer" class="flex justify-between items-center text-left w-full p-4"
+    <div class="Collaps rounded-xl text-[#606060]" :class="{ 'my-shadow': isOpen }">
+        <button @click="toggleAnswer" class="flex justify-between items-center text-left w-full p-4 font-bold md:text-md text-sm "
             :aria-expanded="isOpen">
             {{ title }}
             <span class="icon" :class="{ 'icon-rotated': isOpen }">

@@ -6,7 +6,7 @@ import Test from '@/components/Test.vue'
 </script>
 
 <template>
-  <div class="App">    
+  <div class="App bg-[#f9f9f9] min-h-[100vh]">    
     <div class="max-w-[760px] m-auto">
       <!-- <Faq /> -->
       <Faq2 />

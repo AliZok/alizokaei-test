@@ -1,7 +1,7 @@
 <template>
-  <div class="Faq text-gray-700">
+  <div class="Faq text-[#606060]">
     <div class="container px-6 pt-[30px]">
-      <h1 class=" text-center mb-4 font-bold text-2xl">Frequently Asked Questions</h1>
+      <h1 class=" text-center mb-4 font-bold text-3xl">Frequently Asked Questions</h1>
       <div>
         <!-- <i class="fa fa-spinner fa-spin"></i> -->
 

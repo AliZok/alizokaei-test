@@ -1,7 +1,7 @@
 <template>
-  <div class="Faq text-gray-700">
+  <div class="Faq text-[#606060]">
     <div class="container px-6 pt-[30px]">
-      <h1 class=" text-center mb-4 font-bold text-2xl">Frequently Asked Questions</h1>
+      <h1 class=" text-center mb-4 font-bold text-xl md:text-2xl text-brand">Frequently Asked Questions</h1>
       <div>
         <!-- <i class="fa fa-spinner fa-spin"></i> -->
       </div>
@@ -9,19 +9,15 @@
         <div class="w-[200px] inline-block">
           <SearchInput v-model="searchPhrase" />
         </div>
-        <div v-if="debouncedSearch">
-          Searching for: {{ debouncedSearch }}
-        </div>
       </div>
       <div>
         <transition-group name="list" tag="div">
-          <draggable v-model="newGroupsArrangeArr" v-bind="dragOptions" @start="drag = true" @end="drag = false"
-            item-key="id">
+          <draggable v-model="newGroupsArrangeArr" v-bind="dragOptions" @start="drag = true" @end="drag = false" class="">
             <template #item="{ element }">
               <FAQCategory :title="element" class="mb-3">
                 <div v-for="(item, index) in faqList" :key="index" class="mb-2">
                   <Collaps v-if="item.category == element" :title="item.question">
-                    <div v-html="item.answer"></div>
+                    <div v-html="item.answer" class="md:text-md text-sm"></div>
                   </Collaps>
                 </div>
               </FAQCategory>
