@@ -4,8 +4,6 @@
       <h1 class=" text-center mb-4 font-bold text-2xl">Frequently Asked Questions</h1>
       <div>
         <!-- <i class="fa fa-spinner fa-spin"></i> -->
-
-
       </div>
       <div class="mb-4 text-right">
         <div class="w-[200px] inline-block">
@@ -17,9 +15,9 @@
           <draggable v-model="newGroupsArrangeArr" v-bind="dragOptions" @start="drag = true" @end="drag = false"
             item-key="id">
             <template #item="{ element }">
-              <FAQCategory :title="element[0]" class="mb-3">
-                <div v-for="(item, index) in element[1]" :key="index" class="mb-2">
-                  <Collaps :title="item.question">
+              <FAQCategory :title="element" class="mb-3">
+                <div v-for="(item, index) in faqList" :key="index" class="mb-2">
+                  <Collaps v-if="item.category == element" :title="item.question">
                     <div v-html="item.answer"></div>
                   </Collaps>
                 </div>
@@ -27,17 +25,6 @@
             </template>
           </draggable>
         </transition-group>
-
-        <!-- <div v-for="(items, category) in newGroupsArrange" :key="category">
-          <FAQCategory :title="category" class="mb-3">
-            <div v-for="(item, index) in items" :key="index" class="mb-2">
-              <Collaps :title="item.question">
-                <div v-html="item.answer"></div>
-              </Collaps>
-            </div>
-          </FAQCategory>
-        </div> -->
-
       </div>
     </div>
   </div>
@@ -72,29 +59,24 @@ const getFaqList = () => {
   }
 
   getData(path, params).then((responce) => {
-    console.log(responce.result)
     faqList.value = responce.result
     groupedByCategory()
   })
 }
 
-const newGroupsArrange = ref({})
 const newGroupsArrangeArr = ref([])
 
 const groupedByCategory = () => {
-  newGroupsArrange.value = {};
+  let myList = []
 
   faqList.value.forEach((item) => {
-    if (!newGroupsArrange.value[item.category]) {
-      newGroupsArrange.value[item.category] = [];
-    }
-    newGroupsArrange.value[item.category].push(item);
+    myList.push(item.category)
   });
 
-  newGroupsArrangeArr.value = Object.entries(newGroupsArrange.value)
-
+  newGroupsArrangeArr.value = [...new Set(myList)]
 
 }
+
 
 getFaqList()
 

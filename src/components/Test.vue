@@ -21,7 +21,6 @@
   
   <script setup>
   import { ref } from 'vue';
-  import draggable from 'vuedraggable';
   
   // Sample data
   const items = ref([
@@ -41,7 +40,7 @@
   const drag = ref(false);
   </script>
   
-  <style>
+  <style scoped>
   /* Transition styles */
   .list-enter-active,
   .list-leave-active {
