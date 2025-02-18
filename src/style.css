@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+.my-shadow {
+    box-shadow: 2px 1px 5px #e2e2e2;
+
+}
+

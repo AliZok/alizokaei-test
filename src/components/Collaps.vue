@@ -1,14 +1,19 @@
 <template>
-    <div class="faq-item">
-        <button @click="toggleAnswer" class="faq-question" :aria-expanded="isOpen">
-            {{ question }}
-            <span class="icon" :class="{ 'icon-rotated': isOpen }">▼</span>
+    <div class="Collaps rounded-xl text-gray-700" :class="{ 'my-shadow': isOpen }">
+        <button @click="toggleAnswer" class="flex justify-between items-center text-left w-full p-4"
+            :aria-expanded="isOpen">
+            {{ title }}
+            <span class="icon" :class="{ 'icon-rotated': isOpen }">
+
+                <i class="fa fa-chevron-down text-gray-500"></i>
+
+            </span>
         </button>
         <Transition name="slide">
             <div v-show="isOpen" class="faq-answer">
                 <div class="faq-answer-content">
                     <div class="min-h-[50px]">
-                        {{ answer }}
+                        <slot></slot>
                     </div>
                 </div>
             </div>
@@ -20,14 +25,10 @@
 import { ref } from 'vue';
 
 defineProps({
-    question: {
+    title: {
         type: String,
         required: true
     },
-    answer: {
-        type: String,
-        required: true
-    }
 });
 
 const isOpen = ref(false);
@@ -38,23 +39,12 @@ const toggleAnswer = () => {
 </script>
 
 <style scoped>
-.faq-item {
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    margin-bottom: 10px;
+.Collaps {
+    transition: 0.3s;
 }
 
-.faq-question {
-    width: 100%;
-    text-align: left;
-    padding: 15px;
-    background-color: #f5f5f5;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
+.Collaps:hover {
+    box-shadow: 2px 1px 5px #e2e2e2;
 }
 
 .icon {
