@@ -1,5 +1,5 @@
 <template>
-    <div class="FAQCategory p-4 rounded-xl shadow-[2px_1px_5px_#e2e2e2] bg-white cursor-move">
+    <div class="FAQCategory p-4 md:px-4 px-2 rounded-xl shadow-[2px_1px_5px_#e2e2e2] bg-white cursor-move">
         <div class="wrapper">
             <div class="flex gap-2">
                 <!-- <div class="icon">ic</div> -->

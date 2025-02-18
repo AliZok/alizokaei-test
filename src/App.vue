@@ -7,7 +7,7 @@ import Test from '@/components/Test.vue'
 
 <template>
   <div class="App bg-[#f9f9f9] min-h-[100vh]">    
-    <div class="max-w-[760px] m-auto">
+    <div class="max-w-[760px] m-auto py-2">
       <!-- <Faq /> -->
       <Faq2 />
     </div>
