@@ -1,16 +1,15 @@
 <script setup>
+import Faq from '@/components/Faq.vue'
+import Collaps from '@/components/Collaps.vue'
 
 </script>
 
 <template>
-  <div class="text-[30px]">
-    <!-- Using utilities -->
-<button class="py-2 px-4 font-semibold rounded-lg shadow-md text-white dark:bg-blue-500 bg-green-100 hover:bg-green-700">
-  Click me
-</button>
+  <div class="App">
+    <div class="max-w-[760px] m-auto">
+      <Faq />
+    </div>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
