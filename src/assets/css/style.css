@@ -1,8 +1,9 @@
 @import 'tailwindcss';
 
-.text-brand {
-  color: #0e3c70;
+@theme {
+  --color-brand: #0e3c70;
 }
+
 .my-shadow {
   box-shadow: 2px 1px 5px #e2e2e2;
 }
@@ -20,7 +21,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0e3c70;
+  background: var(--color-brand);
   border-radius: 10px;
 }
 

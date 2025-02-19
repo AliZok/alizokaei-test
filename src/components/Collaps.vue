@@ -50,10 +50,10 @@ const toggleAnswer = () => {
     
 }
 .Collaps button:hover {
-    color: #0e3c70;
+    color: var(--color-brand);
 }
 .Collaps button:hover i {
-    color: #0e3c70;
+    color: var(--color-brand);
 }
 .icon {
     transition: transform 0.3s ease;

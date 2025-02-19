@@ -33,7 +33,6 @@ const onSearch = () => {
 }
 
 .off-shadow:focus {
-  
-    border: solid 2px #0e3c70;
+    border: solid 2px var(--color-brand);
 }
 </style>
