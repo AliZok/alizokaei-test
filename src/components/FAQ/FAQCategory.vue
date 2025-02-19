@@ -1,18 +1,22 @@
 <template>
-    <div class="FAQCategory p-4 md:px-4 px-2 rounded-xl shadow-[2px_1px_5px_#e2e2e2] bg-white cursor-move">
+    <div class="bg-white shadow-[2px_1px_5px_#e2e2e2] rounded-xl cursor-move FAQCategory">
         <div class="wrapper">
-            <div class="flex gap-2">
-                <!-- <div class="icon">ic</div> -->
-                <h2 class="title md:text-lg text-md font-bold mb-4 text-[#0e3c70]">{{ title }}</h2>
+            <Collaps :title="title">
+                <slot></slot>
+            </Collaps>
+            <!-- <div class="flex gap-2">
+                <div class="icon">ic</div>
+                <h2 class="mb-4 font-bold text-[#0e3c70] text-md md:text-lg title">{{ title }}</h2>
             </div>
             <div>
                 <slot></slot>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
 
 <script setup>
+import Collaps from '@/components/Collaps.vue'
 
 const props = defineProps({
     title: {
