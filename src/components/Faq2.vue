@@ -1,7 +1,7 @@
 <template>
   <div class="text-[#606060] Faq">
     <div class="px-2 md:px-6 pt-2 text-center">
-      <div class="inline-block relative text-[#0e3c70]">
+      <div class="inline-block relative text-brand">
         <h1 class="mb-6 font-bold text-xl md:text-2xl text-center">Frequently Asked Questions</h1>
         <i v-if="isWatingData" class="top-[9px] left-[-25px] absolute scale-125 fa fa-spinner fa-spin"></i>
       </div>

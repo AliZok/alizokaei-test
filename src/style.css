@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+.text-brand {
+  color: #0e3c70;
+}
 .my-shadow {
   box-shadow: 2px 1px 5px #e2e2e2;
 }
@@ -9,7 +12,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width:8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {

@@ -6,7 +6,7 @@
             </Collaps>
             <!-- <div class="flex gap-2">
                 <div class="icon">ic</div>
-                <h2 class="mb-4 font-bold text-[#0e3c70] text-md md:text-lg title">{{ title }}</h2>
+                <h2 class="mb-4 font-bold text-brand text-md md:text-lg title">{{ title }}</h2>
             </div>
             <div>
                 <slot></slot>

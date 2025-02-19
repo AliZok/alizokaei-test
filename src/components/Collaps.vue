@@ -3,15 +3,15 @@
         <button @click="toggleAnswer"
             class="flex justify-between items-center gap-3 px-4 py-5 w-full font-[600] md:text-md text-sm text-left cursor-pointer"
             :aria-expanded="isOpen">
-            <div :class="{'text-[#0e3c70]':isOpen}"> {{ title }}</div>
+            <div :class="{'text-brand':isOpen}"> {{ title }}</div>
             <span class="icon" :class="{ 'icon-rotated': isOpen }">
 
-                <i class="fa fa-chevron-down" :class="isOpen ? 'text-[#0e3c70]' : 'text-gray-500 '"></i>
+                <i class="fa fa-chevron-down" :class="isOpen ? 'text-brand' : 'text-gray-500 '"></i>
 
             </span>
         </button>
         <Transition name="slide">
-            <div v-show="isOpen" class="faq-answer">
+            <div v-show="isOpen" class="text-left faq-answer">
                 <div class="faq-answer-content">
                     <div class="min-h-[50px]">
                         <slot></slot>
