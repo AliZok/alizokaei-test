@@ -1,14 +1,12 @@
 <template>
-  <div class="Faq text-[#606060]">
-    <div class="container px-6 pt-[30px]">
-      <h1 class=" text-center mb-4 font-bold text-3xl">Frequently Asked Questions</h1>
+  <div class="text-[#606060] Faq">
+    <div class="px-6 pt-[30px] container">
+      <h1 class="mb-4 font-bold text-3xl text-center">Frequently Asked Questions</h1>
       <div>
-        <!-- <i class="fa fa-spinner fa-spin"></i> -->
-
-
+        <i class="fa fa-spinner fa-spin"></i>
       </div>
       <div class="mb-4 text-right">
-        <div class="w-[200px] inline-block">
+        <div class="inline-block w-[200px]">
           <SearchInput v-model="searchPhrase" />
         </div>
       </div>

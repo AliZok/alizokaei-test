@@ -1,9 +1,9 @@
 <template>
   <div class="text-[#606060] Faq">
-    <div class="px-2 md:px-6 pt-2">
-      <h1 class="mb-6 font-bold text-[#0e3c70] text-xl md:text-2xl text-center">Frequently Asked Questions</h1>
-      <div>
-        <!-- <i class="fa fa-spinner fa-spin"></i> -->
+    <div class="px-2 md:px-6 pt-2 text-center">
+      <div class="inline-block relative text-[#0e3c70]">
+        <h1 class="mb-6 font-bold text-xl md:text-2xl text-center">Frequently Asked Questions</h1>
+        <i v-if="isWatingData" class="top-[9px] left-[-25px] absolute scale-125 fa fa-spinner fa-spin"></i>
       </div>
       <div class="mb-4 text-right">
         <div class="inline-block w-[200px]">
@@ -43,7 +43,7 @@ const { test } = useFunctions()
 const { getData } = useApi()
 
 const drag = ref(false);
-
+const isWatingData = ref(true)
 const dragOptions = {
   animation: 200,
   ghostClass: 'ghost',
@@ -53,6 +53,7 @@ const faqList = ref([])
 const searchPhrase = ref('')
 
 const getFaqList = () => {
+  isWatingData.value = true
   const path = 'content-manger/get-data/tb-faq/'
   const params = {
     sortBy: 'id',
@@ -79,7 +80,7 @@ const groupedByCategory = () => {
   });
 
   newGroupsArrangeArr.value = [...new Set(myList)]
-
+  isWatingData.value = false
 }
 
 
