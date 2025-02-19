@@ -57,6 +57,7 @@ const toggleAnswer = () => {
 }
 .icon {
     transition: transform 0.3s ease;
+    transform: scale(0.8);
 }
 
 .icon-rotated {
