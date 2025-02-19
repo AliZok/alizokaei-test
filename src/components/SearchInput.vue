@@ -1,11 +1,11 @@
 <template>
-    <div class="w-full ">
+    <div class="w-full">
         <div class="relative">
             <input type="text" v-model="model" @input="onSearch" @focus="isFocused = true" @blur="isFocused = false"
                 placeholder=""
-                class="text-gray-500 md:text-md text-sm bg-white w-full pl-10 pr-4 py-[8px] rounded-full my-shadow outline-none off-shadow transition duration-200 ease-in-out" />
-            <div class="absolute inset-y-0 left-0 top-[1px] pl-3 flex items-center pointer-events-none">
-                <i class="fa fa-search h-5 w-5  " :class="isFocused ? 'text-[#0e3c70] ' : 'text-gray-300'"></i>
+                class="bg-white my-shadow off-shadow py-[8px] pr-4 pl-10 rounded-full outline-none w-full text-gray-500 md:text-md text-sm transition duration-200 ease-in-out" />
+            <div class="top-[1px] left-0 absolute inset-y-0 flex items-center pl-3 pointer-events-none">
+                <i class="w-5 h-5 fa fa-search" :class="isFocused ? 'text-[#0e3c70] ' : 'text-gray-300'"></i>
             </div>
         </div>
     </div>
@@ -28,9 +28,12 @@ const onSearch = () => {
 <style scoped>
 .off-shadow {
     /* box-shadow: 0 0 2px #e3e3e3; */
+    border: solid 2px white;
+
 }
 
 .off-shadow:focus {
-    box-shadow:0 0 4px #0e3c70;
+  
+    border: solid 2px #0e3c70;
 }
 </style>

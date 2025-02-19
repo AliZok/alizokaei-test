@@ -1,20 +1,21 @@
 <template>
-  <div class="Faq text-[#606060]">
-    <div class=" md:px-6 px-2 pt-[30px]">
-      <h1 class=" text-center mb-4 font-bold text-xl md:text-2xl text-[#0e3c70]">Frequently Asked Questions</h1>
+  <div class="text-[#606060] Faq">
+    <div class="px-2 md:px-6 pt-2">
+      <h1 class="mb-6 font-bold text-[#0e3c70] text-xl md:text-2xl text-center">Frequently Asked Questions</h1>
       <div>
         <!-- <i class="fa fa-spinner fa-spin"></i> -->
       </div>
       <div class="mb-4 text-right">
-        <div class="w-[200px] inline-block">
+        <div class="inline-block w-[200px]">
           <SearchInput v-model="searchPhrase" />
         </div>
       </div>
       <div>
         <transition-group name="list" tag="div">
-          <draggable v-model="newGroupsArrangeArr" v-bind="dragOptions" @start="drag = true" @end="drag = false" class="">
+          <draggable v-model="newGroupsArrangeArr" v-bind="dragOptions" @start="drag = true" @end="drag = false"
+            class="">
             <template #item="{ element }">
-              <FAQCategory :title="element" class="mb-3">
+              <FAQCategory :title="removeNumber(element)" class="mb-3">
                 <div v-for="(item, index) in faqList" :key="index" class="mb-2">
                   <Collaps v-if="item.category == element" :title="item.question">
                     <div v-html="item.answer" class="md:text-md text-sm"></div>
@@ -65,6 +66,9 @@ const getFaqList = () => {
   })
 }
 
+const removeNumber = (title) => {
+  return title.split(' ')[1]
+}
 const newGroupsArrangeArr = ref([])
 
 const groupedByCategory = () => {
@@ -116,7 +120,7 @@ const search = (inputPhrase) => {
       );
     })
     groupedByCategory()
-  }else{
+  } else {
     faqList.value = pureList.value
     groupedByCategory()
   }

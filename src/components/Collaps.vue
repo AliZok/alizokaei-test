@@ -1,11 +1,12 @@
 <template>
-    <div class="Collaps rounded-xl text-[#606060]" :class="{ 'my-shadow': isOpen }">
-        <button @click="toggleAnswer" class="flex justify-between items-center text-left w-full p-4 font-bold md:text-md text-sm "
+    <div class="rounded-xl text-[#606060] Collaps" :class="{ 'my-shadow': isOpen }">
+        <button @click="toggleAnswer"
+            class="flex justify-between items-center gap-3 p-4 w-full font-[600] md:text-md text-sm text-left"
             :aria-expanded="isOpen">
-            {{ title }}
+            <div> {{ title }}</div>
             <span class="icon" :class="{ 'icon-rotated': isOpen }">
 
-                <i class="fa fa-chevron-down text-gray-500"></i>
+                <i class="text-gray-500 fa fa-chevron-down"></i>
 
             </span>
         </button>
@@ -41,10 +42,12 @@ const toggleAnswer = () => {
 <style scoped>
 .Collaps {
     transition: 0.3s;
+    cursor: pointer;   
 }
 
 .Collaps:hover {
-    box-shadow: 2px 1px 5px #e2e2e2;
+    box-shadow: 0px 0px 5px #0e3c7059;
+    
 }
 
 .icon {
