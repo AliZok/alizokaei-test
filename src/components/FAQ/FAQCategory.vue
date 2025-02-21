@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white shadow-[2px_1px_5px_#e2e2e2] rounded-xl cursor-move FAQCategory">
         <div class="wrapper">
-            <Collaps :title="title">
+            <Collaps :title="title" :subtitle="subtitle">
                 <slot></slot>
             </Collaps>
             <!-- <div class="flex gap-2">
@@ -22,6 +22,11 @@ const props = defineProps({
     title: {
         default: 'Title of Category',
         type: String,
-    }
+    },
+    subtitle: {
+
+        type: String,
+    },
+
 })
 </script>

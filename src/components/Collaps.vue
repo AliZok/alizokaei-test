@@ -1,9 +1,17 @@
 <template>
     <div class="rounded-xl text-[#606060] Collaps" :class="{ 'my-shadow': isOpen }">
         <button @click="toggleAnswer"
-            class="flex justify-between items-center gap-3 px-4 py-5 w-full font-[600] md:text-md text-sm text-left cursor-pointer"
+            class="flex justify-between items-center gap-3 px-4 py-4 w-full font-[600] md:text-md text-sm text-left cursor-pointer"
             :aria-expanded="isOpen">
-            <div :class="{'text-brand':isOpen}"> {{ title }}</div>
+            <div :class="{ 'text-brand': isOpen }" class="min-h-[37px] flex flex-col justify-center">
+                <div class="mb-1">
+                    {{ title }}
+                </div>
+                <div v-if="subtitle" class="sub-title text-[#9d9d9d] text-[11px] text-left">
+                    {{ subtitle }}
+                </div>
+            </div>
+
             <span class="icon" :class="{ 'icon-rotated': isOpen }">
 
                 <i class="fa fa-chevron-down" :class="isOpen ? 'text-brand' : 'text-gray-500 '"></i>
@@ -30,6 +38,9 @@ defineProps({
         type: String,
         required: true
     },
+    subtitle: {
+        type: String,
+    },
 });
 
 const isOpen = ref(false);
@@ -42,19 +53,22 @@ const toggleAnswer = () => {
 <style scoped>
 .Collaps {
     transition: 0.3s;
-    cursor: pointer;   
+    cursor: pointer;
 }
 
 .Collaps:hover {
     box-shadow: 0px 0px 5px #0e3c7059;
-    
+
 }
+
 .Collaps button:hover {
     color: var(--color-brand);
 }
+
 .Collaps button:hover i {
     color: var(--color-brand);
 }
+
 .icon {
     transition: transform 0.3s ease;
     transform: scale(0.8);

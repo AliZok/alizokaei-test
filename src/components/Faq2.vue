@@ -15,9 +15,10 @@
           <draggable v-model="newGroupsArrangeArr" v-bind="dragOptions" @start="drag = true" @end="drag = false"
             class="">
             <template #item="{ element }">
-              <FAQCategory :title="removeNumber(element)" class="mb-3">
-                <div v-for="(item, index) in faqList" :key="index" class="mb-2">
-                  <Collaps v-if="item.category == element" :title="item.question">
+              <FAQCategory :title="removeNumber(element.category)" :subtitle="removeNumber(element.subcategory)"
+                class="mb-3">
+                <div v-for="(item, index) in faqList" :key="index" class="mb-2 ">
+                  <Collaps v-if="item.category == element.category" :title="item.question">
                     <div v-html="item.answer" class="md:text-md text-sm"></div>
                   </Collaps>
                 </div>
@@ -76,16 +77,22 @@ const groupedByCategory = () => {
   let myList = []
 
   faqList.value.forEach((item) => {
-    myList.push(item.category)
+    let newObj = {
+      category: item.category,
+      subcategory: item.subcategory,
+    }
+    myList.push(newObj)
   });
 
-  newGroupsArrangeArr.value = [...new Set(myList)]
+  newGroupsArrangeArr.value = Array.from(
+    new Set(myList.map(item => JSON.stringify(item)))
+  ).map(item => JSON.parse(item));
+
   isWatingData.value = false
 }
 
 
 getFaqList()
-
 
 const debouncedSearch = ref('');
 const debounceTimeout = ref(null);
