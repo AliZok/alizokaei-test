@@ -71,6 +71,7 @@ const getFaqList = () => {
 const removeNumber = (title) => {
   return title.split(' ')[1]
 }
+
 const newGroupsArrangeArr = ref([])
 
 const groupedByCategory = () => {
